@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px; /* 위아래 왼쪽오른쪽 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+header .logo {
+    color: white;
+    text-transform: uppercase; /* 전체를 대문자로 변경 */
+    cursor: pointer;
+}
+
+.toggle {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    background: url(http://i.ibb.co/HrfVRcx/menu.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+.toggle.active{
+    background: url(http://i.ibb.co/rt3HybH/close.png);
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: center;
+    cursor: pointer;
+}
+.showcase{
+    position: absolute;
+    right: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111;
+    transition: 0.5s;
+    z-index: 2; /* 상위 위아래 값 */
+}
+.showcase video { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    opacity: 0.8; /* 본 영상에 오퍼시티 값을 주어서 아래 깔아둔 회색상이 돋보여 
+    해상도를 높여줌 */
+}
+.overlay { /* 선명도 주려고 하는 작업 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #90887d;
+    mix-blend-mode: overlay;
+}
+
+.showcase.active{
+    right: 300px;
+}
+
+.text {
+    position: relative;
+    z-index: 10; /* 영상보다 위로 나오게 해야 하므로 값을 더 높게 주기 */
+}
+.text h2{
+    font-size: 6.5em;
+    font-weight: 800;
+    color: white;
+    line-height: 1em;
+    text-transform: uppercase; /* 대문자로 변경 */
+}
+.text h3{
+    font-size: 5em;
+    font-weight: 700;
+    color: white;
+    line-height: 1em;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    padding-top: .2rem;
+}
+
+.text p{
+    font-size: 1.3em;
+    color: white;
+    margin: 20px 0;
+    font-weight: 400;
+    max-width: 700px;
+    margin-bottom: 50px;
+}
+.text a{
+    font-size: 1rem;
+    background-color: white;
+    padding: 11px 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 100px;
+    color: rgb(44, 44, 44);
+    letter-spacing: 2px; /* 글자 간격 띄워주기 */
+    transition: 1s;
+}
+.text a:hover{
+    letter-spacing: 6px;
+}
+
+.social {
+    position:absolute;
+    z-index: 10;
+    bottom: -185px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    scale: 0.2;
+    left: -550px;
+}
+.social li a{
+    display: inline-block;
+    margin-right: 20px;
+    filter: invert(1);
+    transform: scale(0.5);
+    transition: 0.5s;
+}
+
+.social li a:hover{
+    transform: scale(0.5) translateY(-20px);
+}
+.menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu ul{
+    position: relative;
+}
+.menu ul li {
+    list-style: none;
+    margin-top: 50px;
+}
+.menu ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: #111;
+
+}
+.menu ul li a:hover{
+    color: rgb(163, 152, 142);
+}
+
+@media screen and (max-width: 768px) 
+{
+.text {
+    position: relative;
+    left: -50px;
+}
+.text h2{
+    font-size: 3.5em;
+    font-weight: 800;
+    color: white;
+    line-height: 1em;
+    text-transform: uppercase; /* 대문자로 변경 */
+}
+.text h3{
+    font-size: 2.5em;
+    font-weight: 700;
+    color: white;
+    line-height: 1em;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    padding-top: .2rem;
+}
+.text p{
+    font-size: .7em;
+    color: white;
+    margin: 20px 0;
+    font-weight: 400;
+    max-width: 700px;
+    margin-bottom: 50px;
+}
+.toggle {
+    position: relative;
+    right: -65px;
+    width: 25px;
+    height: 25px;
+    background: url(http://i.ibb.co/HrfVRcx/menu.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+header .logo {
+    color: white;
+    text-transform: uppercase; /* 전체를 대문자로 변경 */
+    cursor: pointer;
+    position: relative;
+    left: -50px;
+}
+.menu ul li a{
+    font-size: 1rem;
+    list-style: none;
+    margin-top: 50px;
+}
+
+}
